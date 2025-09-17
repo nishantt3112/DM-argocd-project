@@ -1,23 +1,23 @@
 
 
-pipeline {
-    agent {
-        label 'build-agent'
+pipeline{
+    agent{
+         label 'build-agent'
     }
 
-    tools {
-        jdk 'java17'
+    tools{
+        jdk 'java 17'
         maven 'maven3'
     }
 
     stages{
-        stage('cleanWorkspace')
+        stage('cleanWorkspace'){
             steps{
                 cleanWs()
             }
-    }
+        }
 
-    stages{
+
         stage('codeCheckout'){
             steps{
                 git branch: 'main', credentialsId: 'github-1', url: 'https://github.com/nishantt3112/DM-argocd-project.git'
