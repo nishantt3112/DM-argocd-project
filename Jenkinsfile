@@ -23,6 +23,13 @@ pipeline{
                 git branch: 'main', credentialsId: 'github-1', url: 'https://github.com/nishantt3112/DM-argocd-project.git'
             }
         }
+
+        stage('codeBuild'){
+            steps{
+                sh 'mvn clean package'
+            }
+        }
+    
     }
 
 }
