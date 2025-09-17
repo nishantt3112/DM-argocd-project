@@ -2,7 +2,7 @@
 
 pipeline {
     agent {
-        lable 'build-agent'
+        label 'build-agent'
     }
 
     tools {
